@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汪城弘 · 研0进组自我介绍</title>
+    <style>
+        /* ===== 全局重置与基础 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f7fc;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+
+        /* ===== 左侧导航 ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 220px;
+            background: #0b1a2f;
+            color: #ecf0f3;
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #2a4b6e;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: #b6d4f0;
+        }
+
+        .sidebar h2 span {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .sidebar ul li a {
+            color: #b6c9dd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: #1d3a57;
+            color: #ffffff;
+            padding-left: 1rem;
+        }
+
+        .sidebar .contact-short {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #8aa3c0;
+            border-top: 1px solid #2a4b6e;
+            padding-top: 1rem;
+        }
+
+        .sidebar .contact-short p {
+            margin: 0.3rem 0;
+        }
+
+        .sidebar .contact-short i {
+            display: inline-block;
+            width: 20px;
+        }
+
+        /* ===== 主内容 ===== */
+        .main {
+            margin-left: 240px;
+            padding: 2.5rem 3rem 4rem;
+            max-width: 1000px;
+        }
+
+        /* ===== 头部 ===== */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2f 0%, #1a334d 100%);
+            color: #ffffff;
+            padding: 2.5rem 2.8rem;
+            border-radius: 20px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 24px rgba(11, 26, 47, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 strong {
+            font-weight: 700;
+            color: #ffd966;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            color: #b6d4f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+        }
+
+        .hero .sub span {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+        }
+
+        .hero .contact-row {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+            font-size: 0.95rem;
+            color: #c3d8ec;
+        }
+
+        .hero .contact-row a {
+            color: #ffd966;
+            text-decoration: none;
+            border-bottom: 1px dashed transparent;
+            transition: border 0.2s;
+        }
+
+        .hero .contact-row a:hover {
+            border-bottom: 1px dashed #ffd966;
+        }
+
+        /* ===== 章节卡片 ===== */
+        .section {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+            scroll-margin-top: 1rem;
+        }
+
+        .section:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+            transform: translateY(-2px);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0b1a2f;
+            border-left: 6px solid #2a6b9e;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .section h2 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #5a7a9a;
+            margin-left: 0.8rem;
+        }
+
+        /* ===== 个人简介 ===== */
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2.5rem;
+        }
+
+        .about-grid .item {
+            background: #f0f5fa;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+        }
+
+        .about-grid .item strong {
+            color: #0b1a2f;
+        }
+
+        .about-text {
+            margin-top: 1.2rem;
+            font-size: 1.05rem;
+            color: #1e2e3f;
+        }
+
+        /* ===== 教育 ===== */
+        .edu-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: #f7faff;
+            padding: 1rem 1.5rem;
+            border-radius: 14px;
+            margin-bottom: 1.2rem;
+        }
+
+        .edu-row .left {
+            font-weight: 600;
+        }
+
+        .edu-row .right {
+            color: #2a5a7a;
+        }
+
+        .course-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        .course-grid .course {
+            background: #eef3f9;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        .course-grid .course .score {
+            color: #1a5a8a;
+            font-weight: 600;
+        }
+
+        /* ===== 项目经历 ===== */
+        .exp-item {
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .exp-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .exp-item .title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0b1a2f;
+        }
+
+        .exp-item .meta {
+            font-size: 0.9rem;
+            color: #4a6a8a;
+            margin: 0.2rem 0 0.4rem;
+        }
+
+        .exp-item ul {
+            padding-left: 1.2rem;
+            list-style-type: disc;
+            color: #1e2e3f;
+        }
+
+        /* ===== 毕业设计 ===== */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-grid .card {
+            background: #f7faff;
+            padding: 1.2rem 1.5rem;
+            border-radius: 14px;
+            border-left: 4px solid #2a6b9e;
+        }
+
+        .project-grid .card h4 {
+            font-size: 1rem;
+            color: #0b1a2f;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-grid .card p {
+            font-size: 0.95rem;
+            color: #2a4a6a;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .tech-stack span {
+            background: #dce6f0;
+            padding: 0.1rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #0b1a2f;
+        }
+
+        /* ===== 竞赛荣誉 ===== */
+        .award-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 2rem;
+        }
+
+        .award-list .award {
+            background: #f0f5fa;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+        }
+
+        .award-list .award .year {
+            color: #4a6a8a;
+            font-weight: 300;
+            margin-right: 0.5rem;
+        }
+
+        /* ===== 技能与兴趣 ===== */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 2.5rem;
+        }
+
+        .skills-grid .skill-cat {
+            flex: 1 1 180px;
+        }
+
+        .skills-grid .skill-cat h4 {
+            font-weight: 600;
+            color: #0b1a2f;
+            margin-bottom: 0.3rem;
+        }
+
+        .skills-grid .skill-cat .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.8rem;
+        }
+
+        .skills-grid .skill-cat .tags span {
+            background: #e9eff5;
+            padding: 0.1rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+
+        .hobby-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .hobby-tags span {
+            background: #e1eaf2;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+        }
+
+        /* ===== 底部 ===== */
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dce4ed;
+            color: #5a7a9a;
+            font-size: 0.9rem;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 820px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: 200px;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main {
+                margin-left: 0;
+                padding: 1.5rem 1rem;
+            }
+            .hero {
+                padding: 1.8rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .menu-toggle {
+                display: block !important;
+                position: fixed;
+                top: 1rem;
+                left: 1rem;
+                z-index: 200;
+                background: #0b1a2f;
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 30px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        /* 复制提示 */
+        .copy-tip {
+            display: inline-block;
+            background: #2a6b9e;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .copy-tip:hover {
+            background: #1a4b7a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 手机端菜单按钮 ===== -->
+    <button class="menu-toggle" id="menuToggle">☰ 导航</button>
+
+    <!-- ===== 侧边导航 ===== -->
+    <nav class="sidebar" id="sidebar">
+        <h2><span>汪城弘</span><br>研0 · 自我介绍</h2>
+        <ul>
+            <li><a href="#about" class="active">个人简介</a></li>
+            <li><a href="#education">教育背景</a></li>
+            <li><a href="#experience">项目 & 实习</a></li>
+            <li><a href="#project">毕业设计</a></li>
+            <li><a href="#awards">竞赛与荣誉</a></li>
+            <li><a href="#skills">技能与兴趣</a></li>
+        </ul>
+        <div class="contact-short">
+            <p>📞 18979276719</p>
+            <p>📧 wch18979276719@163.com</p>
+            <p>🔗 <span style="cursor:pointer;" onclick="copyWechat()">yyds211662</span> <span class="copy-tip" onclick="copyWechat()">复制微信</span></p>
+        </div>
+    </nav>
+
+    <!-- ===== 主内容 ===== -->
+    <div class="main">
+
+        <!-- 头部 -->
+        <header class="hero">
+            <h1><strong>汪城弘</strong> · 研0进组自我介绍</h1>
+            <div class="sub">
+                <span>华南农业大学 · 地理信息科学（本科）</span>
+                <span>地图与地理信息系统方向</span>
+                <span>空间分析 / 遥感 / GIS开发</span>
+            </div>
+            <div class="contact-row">
+                <span>📞 18979276719</span>
+                <span>📧 wch18979276719@163.com</span>
+                <span>💬 微信：yyds211662 <span class="copy-tip" onclick="copyWechat()">复制</span></span>
+            </div>
+        </header>
+
+        <!-- 1. 个人简介 -->
+        <section class="section" id="about">
+            <h2>01 个人简介 <small>About Me</small></h2>
+            <div class="about-grid">
+                <span class="item"><strong>籍贯</strong> 江西九江</span>
+                <span class="item"><strong>政治面貌</strong> 群众</span>
+                <span class="item"><strong>年龄</strong> 21 岁</span>
+                <span class="item"><strong>本科院校</strong> 华南农业大学（双一流）</span>
+                <span class="item"><strong>本科专业</strong> 地理信息科学</span>
+            </div>
+            <div class="about-text">
+                <p>大家好，我叫汪城弘！来自江西九江，本科就读于华南农业大学。性格开朗随和，抗压能力强，热衷于探索新事物。日常课余喜欢球类运动放松身心，闲暇时刷短视频拓展视野，偶尔通过游戏舒缓压力。</p>
+            </div>
+        </section>
+
+        <!-- 2. 教育背景 -->
+        <section class="section" id="education">
+            <h2>02 教育背景 <small>Education</small></h2>
+            <div class="edu-row">
+                <span class="left">华南农业大学 · 地理信息科学（双一流）</span>
+                <span class="right">平均学分绩点 <strong>4.05</strong> ｜ CET-4 ✔ ｜ CET-6 ✔</span>
+            </div>
+            <div><strong>主修课程</strong></div>
+            <div class="course-grid">
+                <span class="course">空间分析 <span class="score">84</span></span>
+                <span class="course">测量学 <span class="score">89</span></span>
+                <span class="course">遥感数字图像处理 <span class="score">82</span></span>
+                <span class="course">遥感地学分析 <span class="score">96</span></span>
+                <span class="course">GIS算法基础 <span class="score">97.2</span></span>
+                <span class="course">网络GIS <span class="score">91</span></span>
+                <span class="course">Java程序设计 <span class="score">92</span></span>
+                <span class="course">C语言程序设计 <span class="score">89</span></span>
+                <span class="course">高等数学 <span class="score">96</span></span>
+                <span class="course">线性代数 <span class="score">97</span></span>
+                <span class="course">概率论与数理统计 <span class="score">90</span></span>
+                <span class="course">人工智能概述 <span class="score">90</span></span>
+            </div>
+            <div style="margin-top:1rem;font-size:0.95rem;color:#2a4a6a;">
+                <strong>毕业设计：</strong> 基于移动GIS的华农“掌中行”微信小程序设计与开发
+            </div>
+        </section>
+
+        <!-- 3. 项目 & 实习 -->
+        <section class="section" id="experience">
+            <h2>03 项目 & 实习经历 <small>Experience</small></h2>
+
+            <div class="exp-item">
+                <div class="title">农业土地变化识别 · 大创项目（已结项）</div>
+                <div class="meta">2024.04 – 2025.11</div>
+                <ul>
+                    <li>处理11景高分二号影像，覆盖新会区</li>
+                    <li>eCognition多尺度分割 + ESP算法，完成面向对象监督分类</li>
+                    <li>基于GEE平台计算农业地块NDVI</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="title">耕地质量评价 · 土壤普查</div>
+                <div class="meta">2025.01 – 2025.02</div>
+                <ul>
+                    <li>ArcGIS Pro ModelBuilder构建铁场镇耕地质量评价模型</li>
+                    <li>探索GAMA平台 Agent-Based Modeling</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="title">广东省水利电力勘测设计研究院 · 水土保持技术员</div>
+                <div class="meta">2024.10 – 2024.12</div>
+                <ul>
+                    <li>ArcGIS Pro提取植被覆盖与生物措施B因子</li>
+                    <li>结合Excel构建两年土地利用转移矩阵</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="title">江西省水利科学院水土保持所 · 水土保持监测及科研</div>
+                <div class="meta">2026.01 – 2026.02</div>
+                <ul>
+                    <li>无人机航测与影像处理（6期，厘米级精度）</li>
+                    <li>GIS水文分析与沟网提取（ArcGIS Pro + Global Mapper）</li>
+                    <li>侵蚀参数提取与时空规律分析</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. 毕业设计 -->
+        <section class="section" id="project">
+            <h2>04 毕业设计 <small>Graduation Project</small></h2>
+            <div style="font-size:1.1rem;font-weight:600;color:#0b1a2f;margin-bottom:0.5rem;">
+                基于移动GIS的华农“掌中行”微信小程序设计与开发
+            </div>
+            <p style="color:#2a4a6a;">面向华南农业大学校园场景，基于移动GIS技术设计并开发“掌中行”微信小程序，帮助师生高效获取校园信息、规划出行路径。</p>
+
+            <div class="project-grid">
+                <div class="card">
+                    <h4>📌 核心功能</h4>
+                    <p><strong>校园信息展示</strong> — 地图化呈现校园地点与设施信息</p>
+                    <p><strong>路径规划</strong> — 支持校内多点间最优路径导航</p>
+                    <p><strong>交流与分享</strong> — 同学间互动交流，助力路线分享</p>
+                </div>
+                <div class="card">
+                    <h4>⚙️ 技术架构</h4>
+                    <p><strong>微信小程序前端</strong> — HTML / CSS / JS</p>
+                    <p><strong>Node.js 服务端</strong> — 业务逻辑处理</p>
+                    <p><strong>MySQL 数据库</strong> — 数据存储与管理</p>
+                    <div class="tech-stack">
+                        <span>微信小程序</span>
+                        <span>Node.js</span>
+                        <span>MySQL</span>
+                        <span>GIS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 竞赛与荣誉 -->
+        <section class="section" id="awards">
+            <h2>05 竞赛与荣誉 <small>Awards &amp; Honors</small></h2>
+            <div class="award-list">
+                <span class="award"><span class="year">2025</span> 全国大学生数学竞赛广东省赛区（非数A类）二等奖</span>
+                <span class="award"><span class="year">2024</span> 全国大学生数学建模竞赛广东省赛区二等奖</span>
+                <span class="award"><span class="year">2023</span> 易智睿杯中国大学生GIS软件开发竞赛 · 地图故事组二等奖</span>
+                <span class="award"><span class="year">2024</span> 蓝桥杯广东赛区 C/C++ 程序设计大学B组三等奖</span>
+                <span class="award"><span class="year">2024</span> 华南农业大学奖学金三等奖</span>
+            </div>
+        </section>
+
+        <!-- 6. 技能与兴趣 -->
+        <section class="section" id="skills">
+            <h2>06 技能与兴趣 <small>Skills &amp; Hobbies</small></h2>
+
+            <div style="display:flex;flex-wrap:wrap;gap:1.5rem 2rem;">
+                <div style="flex:1 1 200px;">
+                    <h4 style="color:#0b1a2f;margin-bottom:0.2rem;">💼 技能评价</h4>
+                    <div class="tags" style="display:flex;flex-wrap:wrap;gap:0.4rem 0.8rem;">
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">学习能力</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">团队合作</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">软件操作</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">专业能力</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">项目管理</span>
+                    </div>
+                </div>
+                <div style="flex:1 1 200px;">
+                    <h4 style="color:#0b1a2f;margin-bottom:0.2rem;">💻 软件 &amp; 编程语言</h4>
+                    <div class="tags" style="display:flex;flex-wrap:wrap;gap:0.4rem 0.8rem;">
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">ArcGIS Pro</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">ENVI</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">C</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">Java</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">Python</span>
+                        <span style="background:#e9eff5;padding:0.1rem 0.9rem;border-radius:30px;font-size:0.85rem;">MATLAB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top:1.5rem;">
+                <p style="background:#f7faff;padding:0.8rem 1.5rem;border-radius:14px;font-size:0.95rem;color:#1e2e3f;">
+                    <strong>自我评价：</strong> 性格开朗，抗压能力强，具有积极沟通和解决问题的能力；热爱专业，掌握地信遥感专业知识，具有良好的论文撰写能力；熟悉ArcGIS Pro、ENVI等软件的基本操作；具有一定程序设计能力，掌握C、Java、Python、MATLAB语法。
+                </p>
+            </div>
+
+            <div style="margin-top:1.5rem;">
+                <h4 style="color:#0b1a2f;margin-bottom:0.3rem;">🎯 兴趣爱好</h4>
+                <div class="hobby-tags">
+                    <span>✈️ 无人机航测实践中</span>
+                    <span>⚽ 球类运动</span>
+                    <span>📱 浏览短视频</span>
+                    <span>🎮 游戏</span>
+                    <span>📸 无人机航拍</span>
+                </div>
+                <p style="margin-top:0.6rem;font-size:0.95rem;color:#2a4a6a;">
+                    课余打球放松身心，保持活力与团队协作感；闲暇时刷短视频拓展视野、了解前沿资讯；偶尔通过游戏舒缓压力、劳逸结合；热衷探索新事物，实践无人机航测与影像处理。
+                </p>
+            </div>
+        </section>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <p><strong>汪城弘</strong> · 华南农业大学 · 地理信息科学</p>
+            <p style="margin-top:0.3rem;">📞 18979276719 ｜ 📧 wch18979276719@163.com ｜ 💬 yyds211662</p>
+            <p style="margin-top:0.5rem;font-size:0.8rem;">&copy; 2026 汪城弘 · 研0进组自我介绍</p>
+        </div>
+
+    </div>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        // 侧边栏切换（手机）
+        const toggleBtn = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        toggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            sidebar.classList.toggle('open');
+        });
+        // 点击页面其他区域关闭侧边栏（手机）
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 820) {
+                if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+                    sidebar.classList.remove('open');
+                }
+            }
+        });
+
+        // 导航高亮（滚动监听）
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.sidebar ul li a');
+
+        function updateActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+        window.addEventListener('load', updateActiveLink);
+
+        // 复制微信号
+        function copyWechat() {
+            const wechat = 'yyds211662';
+            navigator.clipboard.writeText(wechat).then(() => {
+                alert('微信号已复制：' + wechat);
+            }).catch(() => {
+                // fallback
+                const input = document.createElement('input');
+                input.value = wechat;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+                alert('微信号已复制：' + wechat);
+            });
+        }
+    </script>
+
+</body>
+</html>
